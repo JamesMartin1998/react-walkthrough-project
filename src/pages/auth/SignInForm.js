@@ -17,9 +17,7 @@ import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
-
-  // useContext imports the setCurrentUser function as prop
-  const setCurrentUser = useSetCurrentUser;
+  const setCurrentUser = useSetCurrentUser();
 
   const [signInData, setSignInData] = useState({
     username: "",
@@ -29,14 +27,10 @@ function SignInForm() {
 
   const [errors, setErrors] = useState({});
 
-  // history of urls
   const history = useHistory();
-
-  // page won't refresh
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // try to login and redirect to home
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
@@ -46,7 +40,6 @@ function SignInForm() {
     }
   };
 
-  // allows input into the form fields
   const handleChange = (event) => {
     setSignInData({
       ...signInData,
