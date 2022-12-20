@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 
-const UseClickOutisdeToggle = () => {
+const UseClickOutsideToggle = () => {
   const [expanded, setExpanded] = useState(false);
   const ref = useRef(null);
 
@@ -22,4 +22,4 @@ const UseClickOutisdeToggle = () => {
   };
 };
 
-export default UseClickOutisdeToggle;
+export default UseClickOutsideToggle;

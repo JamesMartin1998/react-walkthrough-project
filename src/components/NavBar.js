@@ -9,14 +9,14 @@ import {
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
-import UseClickOutisdeToggle from "../hooks/UseClickOutisdeToggle";
+import UseClickOutsideToggle from "../hooks/UseClickOutsideToggle";
 
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  const {expanded, setExpanded, ref} = UseClickOutisdeToggle();
+  const {expanded, setExpanded, ref} = UseClickOutsideToggle();
 
   const handleSignOut = async () => {
     try {
