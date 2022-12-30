@@ -83,6 +83,7 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
+            {/* postPage prop means on the individual postPage can see three dots */}
             {is_owner && postPage && (
               <MoreDropdown
                 handleEdit={handleEdit}
